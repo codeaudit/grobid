@@ -58,6 +58,11 @@
             <artifactId>wapiti</artifactId>
             <version>1.5.0</version>
         </dependency>
+	<dependency>
+	    <groupId>args4j</groupId>
+	    <artifactId>args4j</artifactId>
+	   <version>2.32</version>
+	</dependency>
 		<dependency>
             <groupId>org.allenai</groupId>
             <artifactId>ml</artifactId>
