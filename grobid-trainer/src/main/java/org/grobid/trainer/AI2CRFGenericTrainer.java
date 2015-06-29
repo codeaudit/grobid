@@ -27,7 +27,7 @@ public class AI2CRFGenericTrainer implements GenericTrainer {
         opts.trainPath = trainingData.getAbsolutePath();
         opts.modelPath = outputModel.getAbsolutePath();
         opts.numThreads = numThreads;
-        opts.featureKeepProb = 0.1;
+        opts.featureKeepProb = 0.33;
         opts.maxIterations = 300;
         trainer.trainAndSaveModel(opts);
     }
