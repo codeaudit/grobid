@@ -53,11 +53,12 @@ public class AI2CRFGenericTrainer implements GenericTrainer {
                 writer.write("\n");
             }
             writer.close();
+            fixedTrainData.deleteOnExit();
             fixedTrainDataPath = fixedTrainData.getAbsolutePath();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.printf("Original data size: %d, fixed data size: %d", labeledData.size(), nonBrokenLabeledData.size());
+        System.out.printf("Original data size: %d, fixed data size: %d\n", labeledData.size(), nonBrokenLabeledData.size());
         Trainer.Opts opts = new Trainer.Opts();
         opts.templateFile = template.getAbsolutePath();
         opts.trainPath = fixedTrainDataPath;
