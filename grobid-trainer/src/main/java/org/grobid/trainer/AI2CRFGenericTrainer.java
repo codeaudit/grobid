@@ -57,7 +57,7 @@ public class AI2CRFGenericTrainer implements GenericTrainer {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.printf("Original data size: %d, fixed data size: %d");
+        System.out.printf("Original data size: %d, fixed data size: %d", labeledData.size(), nonBrokenLabeledData.size());
         Trainer.Opts opts = new Trainer.Opts();
         opts.templateFile = template.getAbsolutePath();
         opts.trainPath = fixedTrainDataPath;
