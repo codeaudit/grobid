@@ -8,6 +8,6 @@ fi
 
 for model in "affiliation" "chemical" "date" "citation" "ebook" "fulltext" "header" "name-citation" "name-header" "patent" "segmentation" "reference-segmenter"
 do
-    echo "java -server -mx10g -jar $1 0 $model -gH $2"
+    echo "java -server -mx15g -jar $1 0 $model -gH $2"
 done
-mail -s "Grobid Training Complete" $3 < /dev/null
+sendmail -s "Grobid Training Complete" $3 < /dev/null

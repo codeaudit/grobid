@@ -40,7 +40,7 @@ public class AI2CRFTagger implements GenericTagger {
                 lines.add(line);
             }
         }
-        List<ConllFormat.Row> rows = ConllFormat.readDatum(lines, false, "\\t+");
+        List<ConllFormat.Row> rows = ConllFormat.readDatum(lines, false);
         List<String> labels = tagger.bestGuess(rows);
         if (labels.size() != lines.size()) {
             throw new RuntimeException("Bad tagging");
@@ -48,7 +48,7 @@ public class AI2CRFTagger implements GenericTagger {
         List<String> result = new ArrayList<String>(rows.size());
         try {
             for (int idx = 0; idx < lines.size(); idx++) {
-                String token = rows.get(idx + 1).features.get(0);
+                String token = Joiner.on("\t").join(rows.get(idx + 1).features);
                 String label = labels.get(idx);
                 result.add(token + "\t" + label);
             }
