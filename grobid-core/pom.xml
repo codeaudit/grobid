@@ -61,7 +61,7 @@
 		<dependency>
             <groupId>org.allenai</groupId>
             <artifactId>ml</artifactId>
-            <version>0.2</version>
+            <version>0.4</version>
         </dependency>
         <dependency>
 			<groupId>com.cybozu</groupId>
