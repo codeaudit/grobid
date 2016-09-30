@@ -48,17 +48,17 @@
 			<version>1.0.2</version>
 			<scope>compile</scope>
 		</dependency>
-    <dependency>
-        <groupId>fr.limsi.wapiti</groupId>
-        <artifactId>wapiti</artifactId>
-        <version>1.5.0</version>
-    </dependency>
 		<dependency>
-        <groupId>org.allenai</groupId>
-        <artifactId>ml</artifactId>
-        <version>0.4</version>
-    </dependency>
-    <dependency>
+			<groupId>fr.limsi.wapiti</groupId>
+			<artifactId>wapiti</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.allenai</groupId>
+			<artifactId>ml</artifactId>
+			<version>0.4</version>
+		</dependency>
+    	<dependency>
 			<groupId>com.cybozu</groupId>
 			<artifactId>language-detection</artifactId>
 			<version>09-13-2011</version>
