@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.grobid</groupId>
 		<artifactId>grobid-parent</artifactId>
-		<version>0.3.6-ai2</version>
+		<version>0.3.7-ai2</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
   <artifactId>grobid-core</artifactId>
-	<version>0.3.6-ai2</version>
+	<version>0.3.7-ai2</version>
 	<packaging>jar</packaging>
 	<name>${project.artifactId}</name>
 
@@ -56,7 +56,7 @@
 		<dependency>
 			<groupId>org.allenai</groupId>
 			<artifactId>ml</artifactId>
-			<version>0.4</version>
+			<version>0.16</version>
 		</dependency>
     	<dependency>
 			<groupId>com.cybozu</groupId>
