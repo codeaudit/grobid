@@ -1190,18 +1190,15 @@ public class BiblioItem {
             return null;
         if (str.length() == 0)
             return null;
-        String cleanedString = "";
-        boolean special = false;
+        StringBuilder cleanedString = new StringBuilder(str.length() * 2);
         for (int index = 0; (index < str.length()); index++) {
             char currentCharacter = str.charAt(index);
-            if ((currentCharacter == '\'') || (currentCharacter == '%') || (currentCharacter == '_')) {
-                special = true;
-                cleanedString += '\\';
-            }
-            cleanedString += currentCharacter;
+            if ((currentCharacter == '\'') || (currentCharacter == '%') || (currentCharacter == '_'))
+                cleanedString.append('\\');
+            cleanedString.append(currentCharacter);
         }
 
-        return cleanedString;
+        return cleanedString.toString();
     }
 
     /**
