@@ -390,7 +390,7 @@ public class Engine implements Closeable {
      *         information
      * @throws Exception if sth went wrong
      */
-    public String processHeader(String inputFile, boolean consolidate, BiblioItem result) {
+    public String processHeader(String inputFile, boolean consolidate, BiblioItem result) throws InterruptedException {
         return processHeader(inputFile, consolidate, 0, 2, result);
     }
 
@@ -407,7 +407,7 @@ public class Engine implements Closeable {
      * @return the TEI representation of the extracted bibliographical
      *         information
      */
-    public String processHeader(String inputFile, boolean consolidate, int startPage, int endPage, BiblioItem result) {
+    public String processHeader(String inputFile, boolean consolidate, int startPage, int endPage, BiblioItem result) throws InterruptedException {
         // normally the BiblioItem reference must not be null, but if it is the
         // case, we still continue
         // with a new instance, so that the resulting TEI string is still

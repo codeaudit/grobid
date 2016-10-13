@@ -69,7 +69,7 @@ public class HeaderParser extends AbstractParser {
      * zone.
      */
     public Pair<String, Document> processing2(String pdfInput, boolean consolidate,
-                                              BiblioItem resHeader, int startPage, int endPage) {
+                                              BiblioItem resHeader, int startPage, int endPage) throws InterruptedException {
         DocumentSource documentSource = null;
         try {
             documentSource = DocumentSource.fromPdf(new File(pdfInput), startPage, endPage);
@@ -92,7 +92,7 @@ public class HeaderParser extends AbstractParser {
     /**
      * Header processing after identification of the header blocks with heuristics (old approach)
      */
-    public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) {
+    public String processingHeaderBlock(boolean consolidate, Document doc, BiblioItem resHeader) throws InterruptedException {
         String header;
         if (doc.getBlockDocumentHeaders() == null) {
             header = doc.getHeaderFeatured(true, true);
