@@ -210,7 +210,7 @@ public class CitationParser extends AbstractParser {
      */
     public BiblioItem resultExtraction(String result,
                                        boolean volumePostProcess,
-                                       List<String> tokenizations) {
+                                       List<String> tokenizations) throws InterruptedException {
         BiblioItem biblio = new BiblioItem();
 
         StringTokenizer st = new StringTokenizer(result, "\n");
@@ -224,6 +224,9 @@ public class CitationParser extends AbstractParser {
         // respect to spaces
 
         while (st.hasMoreTokens()) {
+            if(Thread.interrupted())
+                throw new InterruptedException();
+
             boolean addSpace = false;
             String tok = st.nextToken().trim();
 

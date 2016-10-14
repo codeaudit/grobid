@@ -334,7 +334,7 @@ public class Document {
 	 * -> should be moved to the header parser class!
 	 */
     public String getHeaderFeatured(boolean getHeader,
-                                    boolean withRotation) {
+                                    boolean withRotation) throws InterruptedException {
         if (getHeader) {
             // String theHeader = getHeaderZFN(firstPass);
             String theHeader = getHeader();
@@ -602,7 +602,7 @@ public class Document {
      * heuristics to get the header section... 
 	 * -> it is now covered by the CRF segmentation model
 	 */ 
-    public String getHeader() {
+    public String getHeader() throws InterruptedException {
         //if (firstPass)
         BasicStructureBuilder.firstPass(this);
 

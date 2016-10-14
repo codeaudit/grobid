@@ -196,7 +196,7 @@ public class BasicStructureBuilder {
 	 * 
      * @param doc a document
      */
-    static public void firstPass(Document doc) {
+    static public void firstPass(Document doc) throws InterruptedException {
         if (doc == null) {
             throw new NullPointerException();
         }
@@ -218,6 +218,9 @@ public class BasicStructureBuilder {
         doc.setTitleMatchNum(false);
         try {
             for (Block block : doc.getBlocks()) {
+                if(Thread.interrupted())
+                    throw new InterruptedException();
+
                 String localText = block.getText().trim();
                 localText = localText.replace("\n", " ");
                 localText = localText.replace("  ", " ");
